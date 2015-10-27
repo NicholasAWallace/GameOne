@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "WASDPictureMov",
+		uint64 ResourceId = 56cf856eebaf1729,
+	},
+},

@@ -1,0 +1,36 @@
+class ParticleRotation : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {   
+        var rotationW : Real3 = Real3(0,-6,0);
+        var rotationS : Real3 = Real3(0,6,0);
+        var rotationD : Real3 = Real3(-6,0,0);
+        var rotationA : Real3 = Real3(6,0,0);
+        //When W is pressed the Flames move Down!
+        if (Zero.Keyboard.KeyIsDown(Keys.W))
+        {
+            this.Owner.LinearParticleAnimator.Force = rotationW;
+            
+        }
+        if (Zero.Keyboard.KeyIsDown(Keys.S))
+        {
+            this.Owner.LinearParticleAnimator.Force = rotationS;
+            
+        }
+        if (Zero.Keyboard.KeyIsDown(Keys.D))
+        {
+            this.Owner.LinearParticleAnimator.Force = rotationD;
+            
+        }
+        if (Zero.Keyboard.KeyIsDown(Keys.A))
+        {
+            this.Owner.LinearParticleAnimator.Force = rotationA;
+            
+        }
+    }
+}

@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "ParticleRotation",
+		uint64 ResourceId = 56cf941c8fc65207,
+	},
+},

@@ -1,0 +1,44 @@
+class PlayerRotation: ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+
+        if(Zero.Keyboard.KeyIsPressed(Keys.S))
+        {
+            var temp = this.Owner.Transform;
+            this.Owner.Sprite.FlipX = true;
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("Player1");
+            this.Owner.Sprite.FlipY = false;
+        }
+
+        if(Zero.Keyboard.KeyIsPressed(Keys.W))
+        {
+            var temp = this.Owner.Transform;
+            this.Owner.Sprite.FlipX = true;
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("Player1");
+            this.Owner.Sprite.FlipY = true;
+            
+        }
+
+        if(Zero.Keyboard.KeyIsPressed(Keys.A))
+        {
+            var temp = this.Owner.Transform;
+            this.Owner.Sprite.FlipY = true;
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("Player1V2");
+            this.Owner.Sprite.FlipX = false;
+        }
+
+        if(Zero.Keyboard.KeyIsPressed(Keys.D))
+        {
+            var temp = this.Owner.Transform;
+            this.Owner.Sprite.FlipY = true;
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("Player1V2");
+            this.Owner.Sprite.FlipX = true;
+        }
+     }
+}

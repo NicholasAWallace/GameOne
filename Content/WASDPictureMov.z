@@ -1,0 +1,30 @@
+class WASDPictureMov : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+
+        if(Zero.Keyboard.KeyIsPressed(Keys.W))
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("W"); 
+        }
+        if(Zero.Keyboard.KeyIsPressed(Keys.D))
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("D"); 
+        }
+        if(Zero.Keyboard.KeyIsPressed(Keys.A))
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("A"); 
+        }
+        if(Zero.Keyboard.KeyIsPressed(Keys.S))
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.Find("S"); 
+        }
+
+    }
+}
+

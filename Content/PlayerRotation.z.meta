@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "PlayerRotation",
+		uint64 ResourceId = 569419c9a2f749e6,
+	},
+},

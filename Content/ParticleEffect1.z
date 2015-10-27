@@ -1,0 +1,44 @@
+class Particle1 : ZilchComponent
+{
+    var Time : Real = 0;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Time += 1;
+        var v00 : Real = 0;
+        var v100 : Real3 = Real3(25,75,50);
+        var v200 : Real3 = Real3(50,75,50);
+        if (this.Time == 100)
+        {
+            this.Owner.LinearParticleAnimator.Twist = v100;
+        }
+        if (this.Time == 200)
+        {
+            this.Owner.LinearParticleAnimator.Twist = v200;
+        }
+        if (this.Time == 300)
+        {
+            this.Owner.LinearParticleAnimator.Twist = v100;
+        }
+        if (this.Time == 400)
+        {
+            this.Owner.LinearParticleAnimator.Twist = v200;
+        }
+        if (this.Time == 500)
+        {
+            this.Owner.LinearParticleAnimator.Twist = v100;
+        }
+        if (this.Time == 600)
+        {
+            this.Owner.LinearParticleAnimator.Twist = v200;
+        }
+        if (this.Time >= 700)
+        {
+            this.Time == 0;
+        }
+    }
+}
